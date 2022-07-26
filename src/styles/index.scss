@@ -1,0 +1,30 @@
+@use "src/styles/vars";
+@use "src/styles/responsive-breakpoints" as media;
+@import "./_reset.css";
+
+*,
+*::before,
+*::after {
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}

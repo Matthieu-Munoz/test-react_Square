@@ -1,0 +1,15 @@
+@use "src/styles/vars";
+@use "src/styles/responsive-breakpoints" as media;
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+// Example for media queries
+
+@include media.responsive("tablet") {
+  .app {
+  }
+}
