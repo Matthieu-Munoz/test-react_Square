@@ -30,7 +30,8 @@ export const toggleSearch = (value) => ({
 });
 
 export const TOGGLE_RESULT_MORE = "TOGGLE_RESULT_MORE";
-export const toggleResultMore = (value) => ({
+export const toggleResultMore = (value, active) => ({
   type: TOGGLE_RESULT_MORE,
   value,
+  active,
 });

@@ -26,10 +26,49 @@
     }
   }
   &__result {
-    padding-left: 1em;
-    &:hover {
-      font-weight: 700;
-      text-decoration: underline;
+    padding-left: 2em;
+    &__list {
+      list-style: inside;
+      &:hover {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+      &--active {
+        font-weight: 700;
+      }
     }
+  }
+  .resultdetails {
+    position: relative;
+    &__separator {
+      display: flex;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 1em;
+        top: 0.3em;
+        width: 40%;
+        height: 1px;
+        background-color: vars.$white;
+      }
+    }
+    &__list {
+      padding-left: 1em;
+      & li {
+        list-style: inside;
+      }
+    }
+  }
+}
+
+@include media.responsive("tablet") {
+  .resultpanel {
+    width: 80%;
+    font-size: 1.2em;
+  }
+}
+@include media.responsive("desktop") {
+  .resultpanel {
+    width: 60%;
   }
 }

@@ -9,8 +9,15 @@ import "./resultpanel.scss";
 
 function ResultPanel() {
   const dispatch = useDispatch();
-  const { searchInput, searchFired, loading, results, selector, resultMore } =
-    useSelector((state) => state.app);
+  const {
+    searchInput,
+    searchFired,
+    loading,
+    results,
+    selector,
+    resultMore,
+    activeResult,
+  } = useSelector((state) => state.app);
   const cursorCssClass = classNames("resultpanel__search ", {
     "resultpanel__search--animate": !searchFired,
   });
@@ -32,17 +39,21 @@ function ResultPanel() {
       {!loading && results && (
         <div>
           <div>&gt; {results.count} Results :</div>
-          {results.results.map((result, n) => {
-            return (
-              <div
-                key={n}
-                className="resultpanel__result"
-                onClick={() => dispatch(toggleResultMore(result))}
-              >
-                - {result[resultSelector]}
-              </div>
-            );
-          })}
+          <ul className="resultpanel__result">
+            {results.results.map((result, n) => {
+              return (
+                <li
+                  key={n}
+                  className={classNames("resultpanel__result__list", {
+                    "resultpanel__result--active": activeResult === n,
+                  })}
+                  onClick={() => dispatch(toggleResultMore(result, n))}
+                >
+                  {result[resultSelector]}
+                </li>
+              );
+            })}
+          </ul>
           {resultMore && <ResultDetails />}
         </div>
       )}

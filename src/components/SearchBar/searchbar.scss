@@ -1,7 +1,7 @@
 @use "src/styles/vars";
 @use "src/styles/responsive-breakpoints" as media;
 .searchbar {
-  width: 100%;
+  width: 95%;
   height: 2.5em;
   display: flex;
   margin: 0.5em;
@@ -10,7 +10,7 @@
   justify-content: center;
   gap: 0.25em;
   &__search {
-    width: 62%;
+    width: 60%;
     height: 100%;
     position: relative;
     border: 1px solid vars.$dark-grey;
@@ -34,6 +34,7 @@
     }
   }
   &__button {
+    width: 20%;
     font-size: 0.9em;
     background: none;
     color: vars.$grey;
@@ -45,5 +46,16 @@
       color: vars.$white;
       transition: all 0.2s;
     }
+  }
+}
+
+@include media.responsive("tablet") {
+  .searchbar {
+    width: 80%;
+  }
+}
+@include media.responsive("desktop") {
+  .searchbar {
+    width: 60%;
   }
 }
