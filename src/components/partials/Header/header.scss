@@ -1,7 +1,24 @@
 @use "src/styles/vars";
 @use "src/styles/responsive-breakpoints" as media;
-
 .header {
+  [data-searched="People"] {
+    --active-color: #419ebb;
+  }
+  [data-searched="Planets"] {
+    --active-color: #d83a34;
+  }
+  [data-searched="Films"] {
+    --active-color: #6f2ed6;
+  }
+  [data-searched="Species"] {
+    --active-color: #eda249;
+  }
+  [data-searched="Starships"] {
+    --active-color: #1ec2a4;
+  }
+  [data-searched="Vehicles"] {
+    --active-color: #d14c32;
+  }
   &__main {
     display: flex;
     align-items: center;
@@ -25,7 +42,7 @@
       cursor: pointer;
       &--active {
         color: vars.$white;
-        border-bottom: 5px solid vars.$white;
+        border-bottom: 5px solid var(--active-color);
       }
     }
   }
@@ -53,6 +70,7 @@
         height: 1.5em;
         width: 1.5em;
         border-radius: 0.75em;
+        background-color: var(--active-color);
       }
       &__title {
         margin-left: 2em;
@@ -61,29 +79,6 @@
       &__icon {
         margin-left: auto;
       }
-    }
-    .dot--people {
-      background-color: vars.$People;
-    }
-
-    .dot--planets {
-      background-color: vars.$Planets;
-    }
-
-    .dot--films {
-      background-color: vars.$Films;
-    }
-
-    .dot--species {
-      background-color: vars.$Species;
-    }
-
-    .dot--starships {
-      background-color: vars.$Starships;
-    }
-
-    .dot--vehicles {
-      background-color: vars.$Vehicles;
     }
   }
 }
@@ -115,7 +110,7 @@
         color: vars.$grey;
         &--active {
           color: vars.$white;
-          border-bottom: 5px solid vars.$white;
+          border-bottom: 5px solid var(--active-color);
         }
       }
       &--small {
@@ -149,7 +144,7 @@
         line-height: 5rem;
         &--active {
           color: vars.$white;
-          border-top: 5px solid vars.$white;
+          border-top: 5px solid var(--active-color);
           border-bottom: none;
 
           line-height: 4.4rem;
