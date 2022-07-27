@@ -1,8 +1,8 @@
 @use "src/styles/vars";
 @use "src/styles/responsive-breakpoints" as media;
 .searchbar {
-  width: auto;
-  height: 2em;
+  width: 100%;
+  height: 2.5em;
   display: flex;
   margin: 0.5em;
   margin-top: 1em;
@@ -14,11 +14,14 @@
     height: 100%;
     position: relative;
     border: 1px solid vars.$dark-grey;
+    display: flex;
+    align-items: center;
+
     &__icon {
       position: absolute;
       width: 2em;
       height: 2em;
-      padding: 0.35em;
+      padding: 0.2em;
       color: vars.$grey;
     }
     &__input {

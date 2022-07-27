@@ -2,8 +2,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
 // Local | React-Redux
-import { searchInputControl } from "Actions/app";
-import { handleApiSearch } from "Actions/api";
+import { searchInputControl, toggleSearch } from "Actions/app";
+import { handleApiSearch, handleApiSearchAll } from "Actions/api";
 // Styles
 import "./searchbar.scss";
 
@@ -12,7 +12,13 @@ function SearchBar() {
   const { searchInput } = useSelector((state) => state.app);
   const handleSearch = (evt) => {
     evt.preventDefault();
+    dispatch(toggleSearch(true));
     dispatch(handleApiSearch());
+  };
+  const handleSearchAll = (evt) => {
+    evt.preventDefault();
+    dispatch(toggleSearch(true));
+    dispatch(handleApiSearchAll());
   };
   return (
     <form className="searchbar">
@@ -34,7 +40,7 @@ function SearchBar() {
       </button>
       <button
         type="button"
-        onClick={(e) => console.log({ e })}
+        onClick={handleSearchAll}
         className="searchbar__button searchbar__button--all"
       >
         Show All

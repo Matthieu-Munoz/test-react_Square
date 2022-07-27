@@ -2,8 +2,12 @@ import {
   TOGGLE_MENU,
   TOGGLE_SELECTOR,
   SEARCH_INPUT_CONTROL,
+  TOGGLE_LOADING,
+  TOGGLE_SEARCH,
+  TOGGLE_RESULT_MORE
 } from "Actions/app";
 import { SAVE_SEARCH_RESULTS } from "Actions/api";
+
 
 export const initialState = {
   searchInput: "",
@@ -16,7 +20,10 @@ export const initialState = {
     starships: false,
     vehicles: false,
   },
+  searchFired: false,
+  loading: false,
   results: null,
+  resultMore: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -34,6 +41,9 @@ const reducer = (state = initialState, action = {}) => {
     case TOGGLE_SELECTOR:
       return {
         ...state,
+        searchInput: "",
+        searchFired: false,
+        results: null,
         selector: {
           ...state.selector,
           people: false,
@@ -49,6 +59,21 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         results: action.results,
+      };
+    case TOGGLE_LOADING:
+      return {
+        ...state,
+        loading: action.value,
+      };
+    case TOGGLE_SEARCH:
+      return {
+        ...state,
+        searchFired: action.value,
+      };
+    case TOGGLE_RESULT_MORE:
+      return {
+        ...state,
+        resultMore: action.value,
       };
     default:
       return state;

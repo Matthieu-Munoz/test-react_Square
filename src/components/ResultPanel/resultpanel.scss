@@ -1,0 +1,35 @@
+@use "src/styles/vars";
+@use "src/styles/responsive-breakpoints" as media;
+
+@keyframes cursorBlink {
+  0% {
+    opacity: 0;
+  }
+}
+
+.resultpanel {
+  width: 95%;
+  height: 80vh;
+  border: 1px solid vars.$dark-grey;
+  margin: 1em;
+  padding: 1em;
+  &__search {
+    display: flex;
+    align-items: flex-end;
+    &--animate::after {
+      content: "";
+      width: 3px;
+      height: 1.25em;
+      background: vars.$white;
+      display: inline-block;
+      animation: cursorBlink 1.5s steps(2) infinite;
+    }
+  }
+  &__result {
+    padding-left: 1em;
+    &:hover {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+}

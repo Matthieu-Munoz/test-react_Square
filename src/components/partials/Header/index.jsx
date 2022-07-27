@@ -39,7 +39,7 @@ function Header() {
       evt.preventDefault();
       dispatch(toggleMenu(false));
     }
-    dispatch(toggleSelector(clickedSelector, !selector[clickedSelector]));
+    dispatch(toggleSelector(clickedSelector, true));
   };
 
   return (

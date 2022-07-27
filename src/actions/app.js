@@ -11,8 +11,26 @@ export const toggleSelector = (selector, value) => ({
   value,
 });
 
-export const SEARCH_INPUT_CONTROL = 'SEARCH_INPUT_CONTROL';
+export const SEARCH_INPUT_CONTROL = "SEARCH_INPUT_CONTROL";
 export const searchInputControl = (value) => ({
   type: SEARCH_INPUT_CONTROL,
+  value,
+});
+
+export const TOGGLE_LOADING = "TOGGLE_LOADING";
+export const toggleLoading = (value) => ({
+  type: TOGGLE_LOADING,
+  value,
+});
+
+export const TOGGLE_SEARCH = "TOGGLE_SEARCH";
+export const toggleSearch = (value) => ({
+  type: TOGGLE_SEARCH,
+  value,
+});
+
+export const TOGGLE_RESULT_MORE = "TOGGLE_RESULT_MORE";
+export const toggleResultMore = (value) => ({
+  type: TOGGLE_RESULT_MORE,
   value,
 });

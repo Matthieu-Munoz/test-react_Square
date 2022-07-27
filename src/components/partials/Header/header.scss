@@ -1,6 +1,7 @@
 @use "src/styles/vars";
 @use "src/styles/responsive-breakpoints" as media;
 .header {
+  width: 100%;
   [data-searched="People"] {
     --active-color: #419ebb;
   }
