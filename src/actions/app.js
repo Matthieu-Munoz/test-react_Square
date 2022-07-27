@@ -10,3 +10,9 @@ export const toggleSelector = (selector, value) => ({
   selector,
   value,
 });
+
+export const SEARCH_INPUT_CONTROL = 'SEARCH_INPUT_CONTROL';
+export const searchInputControl = (value) => ({
+  type: SEARCH_INPUT_CONTROL,
+  value,
+});
