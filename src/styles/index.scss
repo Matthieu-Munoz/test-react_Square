@@ -1,6 +1,7 @@
 @use "src/styles/vars";
 @use "src/styles/responsive-breakpoints" as media;
 @import "./_reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap");
 
 *,
 *::before,
@@ -15,16 +16,46 @@
 }
 
 @font-face {
-  font-family: "Montserrat";
-  src: local("Montserrat"),
-    url("../assets/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-family: "League Spartan";
+  src: local("League Spartan"),
+    url("../assets/fonts/LeagueSpartan-VariableFont_wght.ttf")
+      format("truetype");
   font-display: swap;
 }
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
+  background-color: vars.$main-bg;
+  color: vars.$white;
+  font-family: League Spartan, sans-serif;
+  background-image: url("../assets/background-stars.svg");
+  background-size: cover;
+}
+
+h2 {
+  font-family: Antonio, sans-serif;
+  font-size: 2.5em;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  font-weight: 700;
+  line-height: 5;
+  letter-spacing: 2.6px;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 1px;
 }

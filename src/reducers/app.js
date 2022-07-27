@@ -1,14 +1,16 @@
+import { TOGGLE_MENU } from "Actions/app";
+
 export const initialState = {
-  sample: true,
+  isMenuOpen: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    // case SAMPLE:
-    //   return {
-    //     ...state,
-    //     sample: action.value,
-    //   };
+    case TOGGLE_MENU:
+      return {
+        ...state,
+        isMenuOpen: action.value,
+      };
     default:
       return state;
   }

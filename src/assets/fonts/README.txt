@@ -1,36 +1,26 @@
-Montserrat Variable Font
-========================
+League Spartan Variable Font
+============================
 
-This download contains Montserrat as both variable fonts and static fonts.
+This download contains League Spartan as both a variable font and static fonts.
 
-Montserrat is a variable font with this axis:
+League Spartan is a variable font with this axis:
   wght
 
-This means all the styles are contained in these files:
-  Montserrat-VariableFont_wght.ttf
-  Montserrat-Italic-VariableFont_wght.ttf
+This means all the styles are contained in a single file:
+  LeagueSpartan-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Montserrat:
-  static/Montserrat-Thin.ttf
-  static/Montserrat-ExtraLight.ttf
-  static/Montserrat-Light.ttf
-  static/Montserrat-Regular.ttf
-  static/Montserrat-Medium.ttf
-  static/Montserrat-SemiBold.ttf
-  static/Montserrat-Bold.ttf
-  static/Montserrat-ExtraBold.ttf
-  static/Montserrat-Black.ttf
-  static/Montserrat-ThinItalic.ttf
-  static/Montserrat-ExtraLightItalic.ttf
-  static/Montserrat-LightItalic.ttf
-  static/Montserrat-Italic.ttf
-  static/Montserrat-MediumItalic.ttf
-  static/Montserrat-SemiBoldItalic.ttf
-  static/Montserrat-BoldItalic.ttf
-  static/Montserrat-ExtraBoldItalic.ttf
-  static/Montserrat-BlackItalic.ttf
+in those cases you can use the static font files for League Spartan:
+  static/LeagueSpartan-Thin.ttf
+  static/LeagueSpartan-ExtraLight.ttf
+  static/LeagueSpartan-Light.ttf
+  static/LeagueSpartan-Regular.ttf
+  static/LeagueSpartan-Medium.ttf
+  static/LeagueSpartan-SemiBold.ttf
+  static/LeagueSpartan-Bold.ttf
+  static/LeagueSpartan-ExtraBold.ttf
+  static/LeagueSpartan-Black.ttf
 
 Get started
 -----------
@@ -74,7 +64,7 @@ License
 Please read the full license text (OFL.txt) to understand the permissions,
 restrictions and requirements for usage, redistribution, and modification.
 
-You can use them freely in your products & projects - print or digital,
+You can use them in your products & projects – print or digital,
 commercial or otherwise.
 
 This isn't legal advice, please consider consulting a lawyer and see the full
