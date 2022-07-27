@@ -1,0 +1,46 @@
+@use "src/styles/vars";
+@use "src/styles/responsive-breakpoints" as media;
+.searchbar {
+  width: auto;
+  height: 2em;
+  display: flex;
+  margin: 0.5em;
+  margin-top: 1em;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  &__search {
+    width: 62%;
+    height: 100%;
+    position: relative;
+    border: 1px solid vars.$dark-grey;
+    &__icon {
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      padding: 0.35em;
+      color: vars.$grey;
+    }
+    &__input {
+      height: 100%;
+      width: 100%;
+      padding-left: 2em;
+      background-color: unset;
+      border: none;
+      color: vars.$white;
+    }
+  }
+  &__button {
+    font-size: 0.9em;
+    background: none;
+    color: vars.$grey;
+    border: 1px solid vars.$dark-grey;
+    height: 100%;
+    padding: 0.25em;
+    &:hover {
+      border: 2px solid vars.$white;
+      color: vars.$white;
+      transition: all 0.2s;
+    }
+  }
+}

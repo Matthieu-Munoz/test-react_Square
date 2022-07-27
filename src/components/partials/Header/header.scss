@@ -1,15 +1,6 @@
 @use "src/styles/vars";
 @use "src/styles/responsive-breakpoints" as media;
 
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
 .header {
   &__main {
     display: flex;
@@ -148,6 +139,9 @@
       border: none;
       justify-content: flex-end;
       line-height: 5rem;
+      height: 5rem;
+      width: auto;
+
       &__title {
         color: vars.$grey;
         margin-left: 2em;

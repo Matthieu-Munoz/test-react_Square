@@ -14,7 +14,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__main">
-        <h2 className="header__main__title">StarWars</h2>
+        <h2 className="header__main__title">Star Wars</h2>
         <div className="header__main__burger">
           <BurgerIcon />
         </div>
