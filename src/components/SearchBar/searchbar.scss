@@ -41,6 +41,7 @@
     border: 1px solid vars.$dark-grey;
     height: 100%;
     padding: 0.25em;
+    cursor: pointer;
     &:hover {
       border: 2px solid vars.$white;
       color: vars.$white;

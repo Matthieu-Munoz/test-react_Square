@@ -30,8 +30,9 @@
       padding-left: 1em;
       font-weight: 700;
       text-decoration: underline;
+      cursor: pointer;
       &:hover {
-        letter-spacing: 0.1em;
+        letter-spacing: 0.02em;
       }
       &:nth-child(2) {
         padding-left: 5em;
