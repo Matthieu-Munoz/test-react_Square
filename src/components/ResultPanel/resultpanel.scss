@@ -25,10 +25,24 @@
       animation: cursorBlink 1.5s steps(2) infinite;
     }
   }
+  &__navigation {
+    & span {
+      padding-left: 1em;
+      font-weight: 700;
+      text-decoration: underline;
+      &:hover {
+        letter-spacing: 0.1em;
+      }
+      &:nth-child(2) {
+        padding-left: 5em;
+      }
+    }
+  }
   &__result {
     padding-left: 2em;
     &__list {
       list-style: inside;
+      cursor: pointer;
       &:hover {
         font-weight: 700;
         text-decoration: underline;

@@ -8,3 +8,10 @@ export const saveSearchResults = (results) => ({
   type: SAVE_SEARCH_RESULTS,
   results,
 });
+
+export const HANDLE_API_NAVIGATION = "HANDLE_API_NAVIGATION";
+export const handleApiNavigation = (direction, link) => ({
+  type: HANDLE_API_NAVIGATION,
+  direction,
+  link,
+});

@@ -1,9 +1,11 @@
 // Dependencies
 import classNames from "classnames";
 import { useSelector, useDispatch } from "react-redux";
-import ResultDetails from "./ResultDetails";
 // Local | React-Redux
+import ResultDetails from "./ResultDetails";
+import Loader from "../Loader";
 import { toggleResultMore } from "Actions/app";
+import { handleApiNavigation } from "Actions/api";
 // Styles
 import "./resultpanel.scss";
 
@@ -35,7 +37,7 @@ function ResultPanel() {
   return (
     <div className="resultpanel">
       <div className={cursorCssClass}>&gt; Search : {searchInput}</div>
-      {loading && <div>...</div>}
+      {loading && <Loader />}
       {!loading && results && (
         <div>
           <div>&gt; {results.count} Results :</div>
@@ -54,6 +56,27 @@ function ResultPanel() {
               );
             })}
           </ul>
+          <div className="resultpanel__navigation">
+            &gt;{" "}
+            {results.previous && (
+              <span
+                onClick={() =>
+                  dispatch(handleApiNavigation("previous", results.previous))
+                }
+              >
+                Previous
+              </span>
+            )}{" "}
+            {results.next && (
+              <span
+                onClick={() =>
+                  dispatch(handleApiNavigation("next", results.next))
+                }
+              >
+                Next
+              </span>
+            )}
+          </div>
           {resultMore && <ResultDetails />}
         </div>
       )}

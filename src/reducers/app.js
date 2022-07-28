@@ -6,7 +6,7 @@ import {
   TOGGLE_SEARCH,
   TOGGLE_RESULT_MORE,
 } from "Actions/app";
-import { SAVE_SEARCH_RESULTS } from "Actions/api";
+import { SAVE_SEARCH_RESULTS, HANDLE_API_NAVIGATION } from "Actions/api";
 
 export const initialState = {
   searchInput: "",
@@ -66,6 +66,14 @@ const reducer = (state = initialState, action = {}) => {
         loading: action.value,
       };
     case TOGGLE_SEARCH:
+      return {
+        ...state,
+        results: null,
+        resultMore: false,
+        activeResult: null,
+        searchFired: action.value,
+      };
+    case HANDLE_API_NAVIGATION:
       return {
         ...state,
         results: null,

@@ -1,5 +1,9 @@
 import axios from "axios";
-import { HANDLE_API_SEARCH, saveSearchResults } from "Actions/api";
+import {
+  HANDLE_API_SEARCH,
+  saveSearchResults,
+  HANDLE_API_NAVIGATION,
+} from "Actions/api";
 import { toggleLoading } from "Actions/app";
 
 const axiosInstance = axios.create({
@@ -17,9 +21,23 @@ const globalMiddleWare = (store) => (next) => (action) => {
       store.dispatch(toggleLoading(true));
       selectedSelector = Object.keys(selector).filter((k) => selector[k])[0];
       axiosInstance
-        .get(
-          `${selectedSelector}${searchInput ? `/?search=${searchInput}` : ""}`
-        )
+        .get(`${selectedSelector}${searchInput && `/?search=${searchInput}`}`)
+        .then((response) => {
+          if (response.status === 200) {
+            store.dispatch(toggleLoading(false));
+            store.dispatch(saveSearchResults(response.data));
+          }
+        })
+        .catch(() => {
+          store.dispatch(toggleLoading(false));
+          console.log("Error", "An error occured");
+        });
+      next(action);
+      break;
+    case HANDLE_API_NAVIGATION:
+      store.dispatch(toggleLoading(true));
+      axiosInstance
+        .get(`${action.link}`)
         .then((response) => {
           if (response.status === 200) {
             store.dispatch(toggleLoading(false));
